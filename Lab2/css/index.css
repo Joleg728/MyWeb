@@ -9,7 +9,6 @@
     display: grid;
     grid-template-columns: 8vmin auto;
     height: 8vmin;
-    /*margin: ;*/
 }
 .rew_name_1
 {
@@ -18,7 +17,6 @@
     display: flex;
     align-items: center;
     margin: 0 1vw;
-    /*justify-content: center;*/
 }
 .rew_ico_1
 {
@@ -38,8 +36,6 @@
 {
     border: solid black 0.25vmin;
     border-radius: 1vmin;
-    /*font-size: 3vmin;
-    padding: 4vmin;*/
     background: rgb(172, 172, 172);
     margin: 3vmin;
     width: 20vw;
@@ -62,7 +58,6 @@
 .ad_text_2
 {
     margin: 0 0.4vw 0.4vw;
-    /*background: rgb(28, 163, 37);*/
     font-size: 1.5vw;
 }
 .ad_img
@@ -75,20 +70,16 @@
 {
     margin: 0.4vw;
     font-size: 1vw;
-    /*background: rgb(28, 163, 37);*/
 }
 .ad_block1
 {
     display: flex;
     justify-content: center;
     height: inherit;
-    /*background: red;*/
 }
 .ad_block2
 {
-    /*font-size: 0.7vw;*/
     display: flex;
-    /*vertical-align: middle;*/
     flex-direction: column;
     justify-content:space-around;
 }
@@ -99,7 +90,6 @@
     position: fixed;
     margin: 0 20vw 1vw;
     height: 7.25vw;
-    /*width: 60vw;*/
     bottom: 0;
     background: rgb(52, 4, 98);
     text-align: left;
@@ -131,16 +121,12 @@ p
 }
 .main_type_1
 {
-    /*display: flex;
-    align-items: center;
-    justify-content: space-around;*/
     border: solid black 0.25vmin;
     border-radius: 2vmin;
     margin: 2vw;
     padding: 2vw;
     font-size: 6vmin;
     text-align: center;
-    /*height: 10vmin;*/
     background: yellow;
 }
 .header_type_2
@@ -164,7 +150,6 @@ p
     height: 5vmin;
     display: flex;
     align-items: center;
-    /*justify-content: center;*/
 
 }
 .logo_2
@@ -190,8 +175,6 @@ p
     flex-wrap: wrap;
     padding: 1vmin;
     margin: 1vw;
-    /*grid-area: 2 / 2 / 5 / 2;*/
-    /*background: rgb(0, 255, 17);*/
 }
 .header_block_2
 {
@@ -199,11 +182,9 @@ p
     align-items: center;
     justify-content: center;
     border-radius: 2vmin;
-    /*margin: 2vmin;*/
     text-align: center;
     font-size: 5vw;
     grid-area: 1 / 2 / 2 / 2;
-    /*background: rgb(17, 0, 255);*/
 }
 .header_block_1
 {
@@ -211,13 +192,11 @@ p
     align-items: center;
     justify-content: center;
     grid-area: 1 / 1 / 5 / 1;
-    /*background: red;*/
     height: inherit;
 }
 .header_type_1
 {
     display: grid;
-    /*width: 80vw;*/
     height: 14vw;
     margin: 0 8vw;
     border-radius: 2vmin;
@@ -230,14 +209,12 @@ p
 body
 {
     background: rgb(184, 184, 184);
-    /*font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
     font-family: TF2 secondary;
 }
 main
 {
     border: solid black 0.5vmin;
     border-radius: 2vmin;
-    /*padding: 0 0 5vw 0;*/
     width: 50vw;
     margin: 5vmin 5vw 5vh 8vw;
     background:rgb(255, 127, 39);
@@ -291,40 +268,7 @@ li
     text-align: center;
     margin: 3vw 0;
 }
-
-@media (max-width: 860px)
-{
-    /*.header_block_3
-    {
-        font-size: 3vmin;
-    }*/
-    /*.header_block_2
-    {
-        font-size: 7.5vmin;
-    }*/
-    /*.logo_1
-    {
-        height: 12.5vmin;
-    }*/
-    /*.header_type_1
-    {
-        grid-template-columns: 30vmin auto;
-    }*/
-}
-
-@media (max-width: 420px)
-{
-    /*.header_type_1
-    {
-        height: 34vmin;
-    }*/
-    /*.header_type_2
-    {
-        font-size: 2vmin;
-    }*/
-
-}
-@media screen and (orientation: portrait) /*and (max-width: 800px)*/
+@media screen and (orientation: portrait)
 {
     .main_type_2
     {
@@ -346,10 +290,6 @@ li
     {
         font-size: 1.8vw;
     }
-    /*.header_block_2
-    {
-        font-size: 6vw;
-    }*/
     .fixed_ad
     {
         height: 14vw;
