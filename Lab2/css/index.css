@@ -63,7 +63,7 @@
 {
     margin: 0 0.4vw 0.4vw;
     /*background: rgb(28, 163, 37);*/
-    font-size: 1.4vw;
+    font-size: 1.5vw;
 }
 .ad_img
 {
@@ -86,7 +86,7 @@
 }
 .ad_block2
 {
-    font-size: 0.9vw;
+    /*font-size: 0.7vw;*/
     display: flex;
     /*vertical-align: middle;*/
     flex-direction: column;
@@ -98,7 +98,7 @@
     display: grid;
     position: fixed;
     margin: 0 20vw 1vw;
-    height: 6.5vw;
+    height: 7.25vw;
     /*width: 60vw;*/
     bottom: 0;
     background: rgb(52, 4, 98);
@@ -106,6 +106,7 @@
     vertical-align: middle;
     grid-template-columns: 1fr 7fr;
     border: solid black 0.5vmin;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 p
 {
@@ -152,7 +153,11 @@ p
     border: solid black 0.25vmin;
     border-radius: 1vmin;
     height: 3vw;
-    font-size: 3vmin;
+    font-size: 2vw;
+}
+.logo_3
+{
+    height: 4vmin;
 }
 .logo_div
 {
@@ -196,7 +201,7 @@ p
     border-radius: 2vmin;
     /*margin: 2vmin;*/
     text-align: center;
-    font-size: 6vw;
+    font-size: 5vw;
     grid-area: 1 / 2 / 2 / 2;
     /*background: rgb(17, 0, 255);*/
 }
@@ -225,7 +230,8 @@ p
 body
 {
     background: rgb(184, 184, 184);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /*font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
+    font-family: TF2 secondary;
 }
 main
 {
@@ -259,7 +265,6 @@ aside
     float: right;
     border: solid black 0.5vmin;
     border-radius: 2vmin;
-    min-height: 20vh;
     width: 30vw;
     margin: 5vmin 8vw 5vh 8vw;
     background:rgb(255, 255, 255);
@@ -321,6 +326,18 @@ li
 }
 @media screen and (orientation: portrait) /*and (max-width: 800px)*/
 {
+    .main_type_2
+    {
+        font-size: 2vmin;
+    }
+    .main_type_1
+    {
+        font-size: 4vmin;
+    }
+    .aside_block_2
+    {
+        font-size: 2vmin;
+    }
     .ad_text_2
     {
         font-size: 2.4vw;
@@ -348,7 +365,13 @@ li
         width: 26vw;
     }
     .aside_img_1
-{
+    {
     width: 22vw;
+    }
 }
+
+@font-face
+{
+    font-family: TF2 Secondary;
+    src:url("font/TF.ttf");
 }
