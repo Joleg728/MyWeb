@@ -211,7 +211,7 @@ body
     background: rgb(184, 184, 184);
     font-family: TF2 secondary;
 }
-main
+article
 {
     border: solid black 0.5vmin;
     border-radius: 2vmin;
@@ -243,7 +243,7 @@ aside
     border: solid black 0.5vmin;
     border-radius: 2vmin;
     width: 30vw;
-    margin: 5vmin 8vw 5vh 8vw;
+    margin: 0 8vw 5vh 8vw;
     background:rgb(255, 255, 255);
 }
 footer
@@ -313,5 +313,5 @@ li
 @font-face
 {
     font-family: TF2 Secondary;
-    src:url("font/TF.ttf");
+    src:url("assets/font/TF.ttf");
 }
