@@ -322,7 +322,7 @@ li
         display: grid;
         grid-template-columns: 33% auto;
         margin: 0 4vw 4vw;
-        bottom: 30vw;
+        bottom: 20vw;
     }
     .aside_block_2
     {
@@ -443,6 +443,10 @@ li
     .rew_name_1
     {
         font-size: 5vw;
+    }
+    .aside_type_1
+    {
+        bottom: 30vw;
     }
 }
 
