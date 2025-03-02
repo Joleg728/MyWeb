@@ -238,13 +238,15 @@ article
     font-size: 4vmin;
     padding: 0 4vmin 2vmin;
 }
-aside
+.aside_type_1
 {
+    position: sticky;
+    top: 1vw;
     float: right;
     border: solid black 0.5vmin;
     border-radius: 2vmin;
     width: 30vw;
-    margin: 0 8vw 5vh 8vw;
+    margin: 0 8vw;
     background:rgb(255, 255, 255);
 }
 footer
@@ -301,7 +303,7 @@ li
     {
         margin: 2vw 5vw;
     }
-    aside
+    .aside_type_1
     {
         width: 26vw;
     }
