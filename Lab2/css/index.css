@@ -44,8 +44,9 @@
 .rew_block_1
 {
     font-size: 6vmin;
-    padding: 4vmin 4vmin 0;
+    padding: 2vmin 4vmin 2vmin;
     margin: 5vmin;
+    text-align: center;
 }
 .rew_1
 {
@@ -306,7 +307,18 @@ li
     }
     .aside_img_1
     {
-    width: 22vw;
+        width: 22vw;
+    }
+    .rew_block_2
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .rew_subblock_1
+    {
+        width: 70vw;
+        margin: 3vmin auto;
     }
 }
 
