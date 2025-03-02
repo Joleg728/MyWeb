@@ -67,7 +67,6 @@
 {
     height: inherit;
     margin: 0;
-    /*float:left;*/
 }
 .ad_text_1
 {
@@ -327,7 +326,8 @@ li
     }
     .rew_name_1
     {
-        font-size: 3.5vw;
+        font-size: 4vw;
+        justify-content: center;
     }
     .rew_text_1
     {
