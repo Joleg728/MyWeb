@@ -40,7 +40,7 @@
     border-radius: 1vmin;
     background: rgb(172, 172, 172);
     margin: 3vmin;
-    width: 20vw;
+    width: 25%;
     padding: 1vw;
 }
 .rew_block_1
@@ -201,7 +201,7 @@ p
 {
     display: grid;
     height: 14vw;
-    margin: 0 8vw;
+    margin: 0 4vw;
     border-radius: 2vmin;
     background: rgb(255, 127, 39);
     padding: 0 2vmin;
@@ -214,12 +214,12 @@ body
     background: rgb(184, 184, 184);
     font-family: TF2 secondary;
 }
-article
+.article_type_1
 {
     border: solid black 0.5vmin;
-    border-radius: 2vmin;
-    width: 50vw;
-    margin: 5vmin 5vw 5vh 8vw;
+    border-radius: 4vmin;
+    width: 58vw;
+    margin: 5vmin 5vw 5vh 4vw;
     background:rgb(255, 127, 39);
 }
 .aside_img_1
@@ -248,7 +248,7 @@ article
     border: solid black 0.5vmin;
     border-radius: 2vmin;
     width: 30vw;
-    margin: 0 8vw;
+    margin: 0 4vw 0 0;
     background:rgb(255, 255, 255);
 }
 footer
@@ -277,11 +277,11 @@ li
 {
     .main_type_2
     {
-        font-size: 2vmin;
+        font-size: 3.2vw;
     }
     .main_type_1
     {
-        font-size: 4vmin;
+        font-size: 5vw;
     }
     .aside_block_2
     {
@@ -321,23 +321,27 @@ li
     }
     .rew_subblock_1
     {
-        width: 70vw;
-        margin: 3vmin auto;
+        width: auto;
+        margin: 3vmin 6%;
         padding: 1vh;
     }
     .rew_name_1
     {
-        font-size: 1.5vh;
+        font-size: 3.5vw;
     }
     .rew_text_1
     {
-        margin: 1vh 0 0 0;
-        font-size: 1.2vh;
+        margin: 1.75vw 0 0 0;
+        font-size: 2.6vw;
+    }
+    .rew_1
+    {
+        margin: 0 4vw 4vw;
     }
 }
 
 @font-face
 {
     font-family: TF2 Secondary;
-    src:url("assets/font/TF.ttf");
+    src:url("../assets/font/TF.ttf");
 }
