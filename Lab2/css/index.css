@@ -176,7 +176,7 @@ p
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 1vmin;
-    margin: 1vw;
+    margin: 0 1vw;
 }
 .header_block_2
 {
