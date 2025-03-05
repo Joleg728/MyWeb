@@ -187,8 +187,36 @@ caption
     line-height: 1.25;
     text-align: justify;
 }
-img.sticky_engi
+img.sticky_mini
 {
     position: sticky;
     bottom: 0;
+}
+.engi
+{
+    width: 2vw;
+    height: auto;
+}
+.aper
+{
+    width: 1vw;
+    height: auto;
+}
+footer
+{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: end;
+    position: sticky;
+    bottom: 0;
+}
+.center_button
+{
+    display: flex;
+    justify-content: center;
+}
+button
+{
+    font-size: large;
 }
