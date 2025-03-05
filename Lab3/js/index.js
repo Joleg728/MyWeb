@@ -42,7 +42,6 @@ function false_alert()
 let gong_audio = new Audio("assets/audio/gong.mp3");
 
 let false_audio = document.getElementById("FalseAudio");
-//let false_audio = new Audio("assets/audio/false.mp3");
 
 function button_clck()
 {
@@ -56,7 +55,7 @@ function button_clck()
     while(true)
     {
 
-        let text = prompt("Вопрос: кто сильнее? Солнце или триллион львов?");
+        let text = prompt("Вопрос: кто сильнее? Солнце или триллион львов?"); // https://youtu.be/uKEUeE__Jr0?feature=shared&t=2889
 
         if (text === null)
         {
@@ -65,7 +64,7 @@ function button_clck()
 
         if (text.toLowerCase().replace(/\s+/g, '').replace(/[\p{P}\p{S}]/gu, "") == ans_0001)
         {
-            alert("Правильно");
+            alert("Правильно\n\nПодсказка: Эта фраза была в первом сезоне, в конце первой серии");
             break;
         }
 
@@ -79,7 +78,7 @@ function button_clck()
     while(true)
     {
         let text = prompt("Что произнёс главный герой Kenshiro из аниме-сериала \"Hokuto no Ken\" " +
-            "после нанесения своему противнику смертельной атаки?");
+            "после нанесения своему противнику смертельной атаки?");        //https://youtu.be/uKEUeE__Jr0?feature=shared&t=2911
 
         if (text === null)
         {
@@ -99,7 +98,7 @@ function button_clck()
 
     while(true)
     {
-            let result = confirm("Можешь называть меня Джотаро Токийский");
+            let result = confirm("Можешь называть меня Джотаро Токийский"); // https://youtu.be/WyA6K3Kik0o?feature=shared&t=51
     
         if (!result)
         {
@@ -111,7 +110,7 @@ function button_clck()
 
     while(true)
     {
-        let text = prompt("Кто такой Микрозайм?");
+        let text = prompt("Кто такой Микрозайм?"); // https://youtu.be/7VN-yGbSjHw?feature=shared&t=328
 
         if (text === null)
         {
@@ -131,7 +130,7 @@ function button_clck()
 
     while(true)
     {
-        let result = confirm("Скажи код с обратной стороны карты");
+        let result = confirm("Скажи код с обратной стороны карты"); // https://youtu.be/LcS64855Fuo?feature=shared&t=112
 
         if (result)
         {

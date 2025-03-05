@@ -187,19 +187,14 @@ caption
     line-height: 1.25;
     text-align: justify;
 }
-img.sticky_mini
-{
-    position: sticky;
-    bottom: 0;
-}
 .engi
 {
-    width: 2vw;
+    width: 8vmin;
     height: auto;
 }
 .aper
 {
-    width: 1vw;
+    width: 4vmin;
     height: auto;
 }
 footer
