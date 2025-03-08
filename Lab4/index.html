@@ -3,18 +3,20 @@
     <head>
         <meta charset="utf-8">
 		
-        <title>Лаба 2</title>
+        <title>Лаба 4</title>
 
         <link rel="stylesheet" type="text/css" href="css/index.css" />
 
         <link rel="icon" type="image/x-icon" href="assets/img/bebs.ico">
+
+        
 
         <!-- <style type="text/css">
 
         </style> -->
     </head>
 
-    <body>
+    <body id="body_id" onload="reviews_load()">
 
         <section class="logo_div">
 
@@ -33,10 +35,10 @@
             </section>
 
             <nav class="header_block_3">
-                <primary class="header_type_2">Home</primary>
-                <primary class="header_type_2">Services</primary>
-                <primary class="header_type_2">About</primary>
-                <primary class="header_type_2">Contact</primary>
+                <section class="header_type_2">Home</section>
+                <section class="header_type_2">Services</section>
+                <section class="header_type_2">About</section>
+                <section class="header_type_2">Contact</section>
             </nav>
 
         </header>
@@ -82,6 +84,8 @@
 
                 <aside class="aside_type_1">
                     
+                    <section class="theme_type_1" onclick="theme_change()">Change theme</section>
+
                     <section class="aside_block_1">
                         <img src="assets/img/Engi.gif" alt="Engi" class="aside_img_1">
                     </section>
@@ -99,8 +103,26 @@
             
                 <header class="rew_block_1">Отзывы наших клиентов</header>
             
-                <section class="rew_block_2">
+                <section class="rew_block_2" id="Reviews">
 
+                    <section class="rew_subblock_1">
+
+                        <section class="rew_subblock_2">
+                            <img src="assets/img/upload-file.svg" class="rew_ico_1" onclick="openFilePicker()" alt="Upload">
+                            <input type="text" class="rew_name_1" style="height: min-content;" id="rew_name_text"/>
+                        </section>
+
+                        <section class="rew_text_1">
+                            <textarea id="rew_main_text" class="area_type_1"></textarea>
+                        </section>
+
+                        <section class="but_sect_1">
+                            <button class="but_type_1" onclick="create_rew()">Опуликовать</button>
+                            <p class="rate_001" id="range_val_001">4☆</p><input type="range" id="range_id_001" min="0" max="5" step="0.5" value="4" class="range_001" oninput="range_change()"> 
+                        </section>
+
+                    </section>
+<!--
                     <section class="rew_subblock_1">
 
                         <section class="rew_subblock_2">
@@ -137,7 +159,7 @@
                             <p class="rew_name_1">ウィーブースパイ</p>
                         </section>
                         <p class="rew_text_1">同様に、一部の反対派の信念は、開発モデルを分析することを求めています。現代の世界では、
-                            組織の確立された構造が、進歩的な発展の方向性の準備と実施に貢献しています。</p>
+                            組織の確立された構造が、進歩的な発展の方向性の準備と実施に貢献しています。</p> -->
                     </section>
 
                 </section>
@@ -170,5 +192,8 @@
 
         
     </body>
+
+    <script src="js/index.js" defer></script>
+
 </html>
 
