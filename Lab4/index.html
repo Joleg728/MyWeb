@@ -10,7 +10,7 @@
         <link rel="icon" type="image/x-icon" href="assets/img/bebs.ico">
     </head>
 
-    <body id="body_id" onload="reviews_load(rews_array)">
+    <body id="body_id" onload="reviewsLoad(rewsArray)">
 
         <section class="logo_div">
 
@@ -78,7 +78,7 @@
 
                 <aside class="aside_type_1">
                     
-                    <section class="theme_type_1" onclick="theme_change();">Change theme</section>
+                    <section class="theme_type_1" onclick="themeChange();">Change theme</section>
 
                     <section class="aside_block_1">
                         <img src="assets/img/Engi.gif" alt="Engi" class="aside_img_1">
@@ -100,7 +100,7 @@
                 <section class="filtr_block_001">
 
                     <label class="filtr_001" for="range_id_002">Фильтр:</label>
-                    <input type="range" id="range_id_002" min="0" max="5" step="0.5" value="4" class="range_002" oninput="range_change_filt()">
+                    <input type="range" id="range_id_002" min="0" max="5" step="0.5" value="4" class="range_002" oninput="rangeChangeFilt()">
                     <p class="rate_002" id="range_val_002">4☆</p>
                     <button type="submit" id="fltr_btn" onclick="fltrOnOff();" class="button_filt">Вкл</button>
                 </section>
@@ -108,9 +108,9 @@
                 <section class="sort_block_001">
 
                     <p class="filtr_001">Сортировка:</p>
-                    <button type="submit" id="sort_strt_good" onclick="sort_good();" class="button_sort">Сначала хорошие</button>
-                    <button type="submit" id="sort_strt_bad" onclick="sort_bad();" class="button_sort">Сначала плохие</button>
-                    <button type="submit" id="sort_none" onclick="sort_none();" class="button_sort">Выкл</button>
+                    <button type="submit" id="sort_strt_good" onclick="sortGood();" class="button_sort">Сначала хорошие</button>
+                    <button type="submit" id="sort_strt_bad" onclick="sortBad();" class="button_sort">Сначала плохие</button>
+                    <button type="submit" id="sort_none" onclick="sortNone();" class="button_sort">Выкл</button>
 
                 </section>
             
@@ -131,8 +131,8 @@
                         </section>
 
                         <section class="but_sect_1">
-                            <button type="submit" class="but_type_1" onclick="create_rew();">Опуликовать</button>
-                            <label for="range_id_001" class="rate_001" id="range_val_001">4☆</label><input type="range" id="range_id_001" min="0" max="5" step="0.5" value="4" class="range_001" oninput="range_change();"> 
+                            <button type="submit" class="but_type_1" onclick="createRew();">Опуликовать</button>
+                            <label for="range_id_001" class="rate_001" id="range_val_001">4☆</label><input type="range" id="range_id_001" min="0" max="5" step="0.5" value="4" class="range_001" oninput="rangeChange();"> 
                         </section>
 
                     </section>

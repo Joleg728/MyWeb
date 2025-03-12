@@ -1,111 +1,109 @@
 const rew01 = {name: "SoupCan Pyro",
     text: "Я просто в восторге от Tiny Desk Engineer! Несмотря на его маленький размер и кажущуюся бесполезность, он приносит уникальную атмосферу.\nДа, он дорогой, но его харизма и забавность стоят каждой монеты!",
     rate: 5,
-    img_src: "assets/img/soupcan.jpg"};
+    imgSrc: "assets/img/soupcan.jpg"};
 
 const rew02 = {name: "☟︎♏︎♋︎❖︎⍓︎❄︎☞︎📄︎",
     text: "👌︎◆︎⧫︎ ⧫︎♒︎♏︎ ♓︎❍︎◻︎●︎♏︎❍︎♏︎■︎⧫︎♋︎⧫︎♓︎□︎■︎ □︎♐︎ ❍︎□︎♎︎♏︎❒︎■︎ ❍︎♏︎⧫︎♒︎□︎♎︎⬧︎ ◻︎●︎♋︎⍓︎⬧︎ ♋︎ ♎︎♏︎♍︎♓︎⬧︎♓︎❖︎♏︎ ❒︎□︎●︎♏︎ ♓︎■︎ ♓︎■︎■︎□︎❖︎♋︎⧫︎♓︎❖︎♏︎ ❍︎♏︎⧫︎♒︎□︎♎︎⬧︎ □︎♐︎ ◻︎❒︎□︎♍︎♏︎ ⬧︎⬧︎ ❍︎♋︎■︎♋︎♑︎♏︎❍︎♏︎■︎⧫︎📬︎",
     rate: 4,
-    img_src: "assets/img/heavy.jpg"};
+    imgSrc: "assets/img/heavy.jpg"};
 
 const rew03 = {name: "ウィーブースパイ",
     text: "同様に、一部の反対派の信念は、開発モデルを分析することを求めています。現代の世界では、 組織の確立された構造が、進歩的な発展の方向性の準備と実施に貢献しています。",
     rate: 4.5,
-    img_src: "assets/img/spy.jpg"};
+    imgSrc: "assets/img/spy.jpg"};
 let custom_rew01 = {name: "",
                     text: "",
                     rate: null,
-                    img_src: "assets/img/ghostly_gibus.png"};
+                    imgSrc: "assets/img/ghostly_gibus.png"};
 
-let rews_array = [rew01, rew02, rew03];
+let rewsArray = [rew01, rew02, rew03];
 
 
 let ReviewsNode = document.querySelector("#Reviews");
 
-function range_change()
+function rangeChange()
 {
     let value = document.getElementById("range_id_001").value;
     document.getElementById("range_val_001").innerText = value + "☆";
 }
-function range_change_filt()
+function rangeChangeFilt()
 {
     let value = document.getElementById("range_id_002").value;
     document.getElementById("range_val_002").innerText = value + "☆";
 
-    if(fltrOnOff_state)
+    if(fltrOnOffState)
     {
-        let button = document.getElementById("fltr_btn");
+        let fltrRate = document.getElementById("range_id_002").value;
 
-        let fltr_rate = document.getElementById("range_id_002").value;
+        delAllRews(fltrdNumb)
 
-        del_all_rews(fltrd_numb)
+        fltrdNumb = 0;
 
-        fltrd_numb = 0;
-
-        rews_array.forEach(element => {
-            if (element.rate == fltr_rate)
+        rewsArray.forEach(element => {
+            if (element.rate == fltrRate)
             {
-                one_rew_load(element);
-                fltrd_numb++;
+                oneRewLoad(element);
+                fltrdNumb++;
             }
         });
     }
 }
 
-let fltrOnOff_state = false
+let fltrOnOffState = false
 
-let fltrd_numb = 0;
+let fltrdNumb = 0;
 
 function fltrOnOff()
 {
     let button = document.getElementById("fltr_btn");
 
-    let fltr_rate = document.getElementById("range_id_002").value;
+    let fltrRate = document.getElementById("range_id_002").value;
 
-    if (fltrOnOff_state == false)
+    if (fltrOnOffState == false)
     {
         button.innerText = "Выкл";
 
-        del_all_rews(rews_array.length)
+        delAllRews(rewsArray.length)
 
-        rews_array.forEach(element => {
-            if (element.rate == fltr_rate)
+        rewsArray.forEach(element => {
+            if (element.rate == fltrRate)
             {
-                one_rew_load(element);
-                fltrd_numb++;
+                oneRewLoad(element);
+                fltrdNumb++;
             }
         });
 
-        fltrOnOff_state = true;
+        fltrOnOffState = true;
     } 
     else
     {
-        del_all_rews(fltrd_numb)
+        delAllRews(fltrdNumb)
             
-        fltrd_numb = 0;
+        fltrdNumb = 0;
 
         button.innerText = "Вкл";
 
-        let temp_rews = rews_array.slice(0);
+        let tempRews = rewsArray.slice(0);
 
-        if (last_button == "good")
+        if (lastButton == "good")
         {
-            temp_rews = temp_rews.sort((a, b) => - a.rate + b.rate)
+            tempRews = tempRews.sort((a, b) => - a.rate + b.rate)
         }
-        else if (last_button == "bad")
+        else if (lastButton == "bad")
         {
-            temp_rews = temp_rews.sort((a, b) => a.rate - b.rate)
+            tempRews = tempRews.sort((a, b) => a.rate - b.rate)
         }
 
-        reviews_load(temp_rews);
+        reviewsLoad(tempRews);
 
-        fltrOnOff_state = false;
+        fltrOnOffState = false;
 
 
     }
 }
 
-function one_rew_load(element)
+function oneRewLoad(element)
 {
     let sect001 = document.createElement("section");
     sect001.className = "rew_subblock_1";
@@ -114,10 +112,10 @@ function one_rew_load(element)
     let sect002 = document.createElement("section");
     sect002.className = "rew_subblock_2";
 
-    let DOM_img001 = document.createElement("img");
-    DOM_img001.src = element.img_src;
-    DOM_img001.className = "rew_ico_1";
-    DOM_img001.alt = "Ico"
+    let domImg001 = document.createElement("img");
+    domImg001.src = element.imgSrc;
+    domImg001.className = "rew_ico_1";
+    domImg001.alt = "Ico"
 
     let p001 = document.createElement("p");
     p001.className = "rew_name_1";
@@ -140,7 +138,7 @@ function one_rew_load(element)
     sect003.appendChild(p003);
 
     //sect001.textContent = element.name;
-    sect002.appendChild(DOM_img001);
+    sect002.appendChild(domImg001);
     sect002.appendChild(p001);
     
     sect001.appendChild(sect002);
@@ -150,7 +148,7 @@ function one_rew_load(element)
     ReviewsNode.appendChild(sect001);
 }
 
-function reviews_load( rew_mass )
+function reviewsLoad( rew_mass )
 {
     rew_mass.forEach(element => {
         let sect001 = document.createElement("section");
@@ -160,10 +158,10 @@ function reviews_load( rew_mass )
         let sect002 = document.createElement("section");
         sect002.className = "rew_subblock_2";
 
-        let DOM_img001 = document.createElement("img");
-        DOM_img001.src = element.img_src;
-        DOM_img001.className = "rew_ico_1";
-        DOM_img001.alt = "Ico"
+        let domImg001 = document.createElement("img");
+        domImg001.src = element.imgSrc;
+        domImg001.className = "rew_ico_1";
+        domImg001.alt = "Ico"
 
         let p001 = document.createElement("p");
         p001.className = "rew_name_1";
@@ -186,7 +184,7 @@ function reviews_load( rew_mass )
         sect003.appendChild(p003);
 
         //sect001.textContent = element.name;
-        sect002.appendChild(DOM_img001);
+        sect002.appendChild(domImg001);
         sect002.appendChild(p001);
         
         sect001.appendChild(sect002);
@@ -198,9 +196,9 @@ function reviews_load( rew_mass )
     });
 }
 
-function custom_review_load()
+function customReviewLoad()
 {
-    let len = rews_array.length - 1;
+    let len = rewsArray.length - 1;
 
     let sect001 = document.createElement("section");
     sect001.className = "rew_subblock_1";
@@ -209,25 +207,25 @@ function custom_review_load()
     let sect002 = document.createElement("section");
     sect002.className = "rew_subblock_2";
 
-    let DOM_img001 = document.createElement("img");
-    //DOM_img001.src = custom_rew01.img_src;
-    DOM_img001.src = rews_array[len].img_src;
-    DOM_img001.className = "rew_ico_1";
-    DOM_img001.alt = "Ico"
+    let domImg001 = document.createElement("img");
+    //domImg001.src = custom_rew01.imgSrc;
+    domImg001.src = rewsArray[len].imgSrc;
+    domImg001.className = "rew_ico_1";
+    domImg001.alt = "Ico"
 
     let p001 = document.createElement("p");
     p001.className = "rew_name_1";
     //p001.innerText = custom_rew01.name;
-    p001.innerText = rews_array[len].name;
+    p001.innerText = rewsArray[len].name;
 
     let p002 = document.createElement("p");
     p002.className = "rew_text_1";
     //p002.innerText = custom_rew01.text;
-    p002.innerText = rews_array[len].text;
+    p002.innerText = rewsArray[len].text;
 
     let p003 = document.createElement("p");
     p003.className = "rate_text_01";
-    p003.innerText = rews_array[len].rate + "☆";
+    p003.innerText = rewsArray[len].rate + "☆";
 
     let sect003 = document.createElement("section");
         
@@ -235,7 +233,7 @@ function custom_review_load()
 
     sect003.appendChild(p003);
 
-    sect002.appendChild(DOM_img001);
+    sect002.appendChild(domImg001);
     sect002.appendChild(p001);
     
     sect001.appendChild(sect002);
@@ -245,40 +243,40 @@ function custom_review_load()
     ReviewsNode.appendChild(sect001);
 }
 
-function create_rew()
+function createRew()
 {
     if (custom_rew01.name != "")
     {
         return;
     }
 
-    let name_text = document.getElementById("rew_name_text").value;
+    let nameText = document.getElementById("rew_name_text").value;
 
-    let rew_text = document.getElementById("rew_main_text").value;
+    let rewText = document.getElementById("rew_main_text").value;
 
-    let rate_01 = document.getElementById("range_id_001").value;
+    let rate01 = document.getElementById("range_id_001").value;
 
-    if (name_text == "" | rew_text == "")
+    if (nameText == "" | rewText == "")
     {
         alert("Отзыв пуст");
     }
     else
     {
-        custom_rew01.name = name_text;
-        custom_rew01.text = rew_text;
-        custom_rew01.rate = rate_01;
-        rews_array.push(custom_rew01);
-        if(!fltrOnOff_state && last_button == "none")
+        custom_rew01.name = nameText;
+        custom_rew01.text = rewText;
+        custom_rew01.rate = rate01;
+        rewsArray.push(custom_rew01);
+        if(!fltrOnOffState && lastButton == "none")
         {
-            custom_review_load();
-            last_rews_numb = rews_array.length;
+            customReviewLoad();
+            lastRewsNumb = rewsArray.length;
         }
     }
 }
 
-let theme_check = false;
+let themeCheck = false;
 
-function theme_change()
+function themeChange()
 {
     const bodyNode = document.querySelector("body");
 
@@ -302,7 +300,7 @@ function theme_change()
 
     const themeNode = document.querySelector(".theme_type_1");
 
-    if(!theme_check)
+    if(!themeCheck)
     {
         bodyNode.style.backgroundColor = "#1a1a1a";
         asideNode.style.backgroundColor = "#2d2d2d";
@@ -328,7 +326,7 @@ function theme_change()
 
         footerNode.style.backgroundColor = "#2d2d2d";
 
-        theme_check = true;
+        themeCheck = true;
     }
     else
     {
@@ -355,78 +353,80 @@ function theme_change()
 
         footerNode.style.backgroundColor = "#ffffff";
 
-        theme_check = false;
+        themeCheck = false;
     }
 }
 
-let last_button = "none";
+let lastButton = "none";
 
-let last_rews_numb = rews_array.length;
+let lastRewsNumb = rewsArray.length;
 
-function sort_good()
+function sortGood()
 {
-    if (last_button == "good" || fltrOnOff_state)
+    //alert(fltrOnOffState);
+
+    if (lastButton == "good" || fltrOnOffState)
     {
         return;
     }
 
-    del_all_rews(last_rews_numb);
+    delAllRews(lastRewsNumb);
 
-    last_rews_numb = 0;
+    lastRewsNumb = 0;
 
-    let sort_rews_array = rews_array.slice(0);
+    let sort_rews_array = rewsArray.slice(0);
     
     sort_rews_array = sort_rews_array.sort((a, b) => - a.rate + b.rate)
 
     sort_rews_array.forEach(element => {
-        one_rew_load(element);
-        last_rews_numb++;
+        oneRewLoad(element);
+        lastRewsNumb++;
     });
 
-    last_button = "good";
+    lastButton = "good";
 }
 
-function sort_bad()
+function sortBad()
 {
-    if (last_button == "bad")
+    if (lastButton == "bad" || fltrOnOffState)
         {
             return;
         }
     
-        del_all_rews(last_rews_numb);
+        delAllRews(lastRewsNumb);
 
-        last_rews_numb = 0;
+        lastRewsNumb = 0;
     
-        let sort_rews_array = rews_array.slice(0);
+        let sort_rews_array = rewsArray.slice(0);
         sort_rews_array = sort_rews_array.sort((a, b) => a.rate - b.rate)
     
         sort_rews_array.forEach(element => {
-            one_rew_load(element);
-            last_rews_numb++;
+            oneRewLoad(element);
+            lastRewsNumb++;
         });
     
-        last_button = "bad";
+        lastButton = "bad";
 }
 
-function sort_none()
+function sortNone()
 {
-    if (last_button == "none")
+    if (lastButton == "none" || fltrOnOffState)
         {
             return;
         }
     
-        del_all_rews(last_rews_numb);
+        delAllRews(lastRewsNumb);
 
-        last_rews_numb = rews_array.length;
+        lastRewsNumb = rewsArray.length;
     
-        rews_array.forEach(element => {
-            one_rew_load(element);
+        rewsArray.forEach(element => {
+            oneRewLoad(element);
         });
     
-        last_button = "none";
+        lastButton = "none";
 }
 
-function del_all_rews( count )
+function delAllRews( count )
 {
     for (let i = 0; i < count; i++)
         {
@@ -449,7 +449,7 @@ function readURL()
         
         const img = new Image();
 
-        custom_rew01.img_src = url;
+        custom_rew01.imgSrc = url;
 
     });
 }
