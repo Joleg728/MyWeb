@@ -1,13 +1,92 @@
 @import "reset.css";
 
+/*button[value='Обзор'] + div {
+    display: none;
+}*/
+.button_sort
+{
+    font-size: 2vmax;
+    border: solid black 0.25vmin;
+    border-radius: 1vmin;
+    margin: 0.5vmax 1vmax;
+}
+.button_filt
+{
+    font-size: 2vmax;
+    border: solid black 0.25vmin;
+    border-radius: 1vmin;
+}
+.filtr_001
+{
+    padding: 3vmin;
+    margin: 0;
+    font-size: 3vmax;
+}
+.sort_block_001
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: solid black 0.25vmin;
+    border-radius: 1vmin;
+    margin: 1vmin 3vmin 0;
+}
+.filtr_block_001
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: solid black 0.25vmin;
+    border-radius: 1vmin;
+    margin: 0 3vmin;
+}
+input.rew_img_001
+{
+    aspect-ratio: 1 / 1;
+    /*background: url(../assets/img/upload-file.svg);*/
+    /*border: 0;*/
+    /*display: block;*/
+    /*height: _the_image_height;
+    width: _the_image_width;*/
+    width: 100%;
+    border: solid black 0.25vmin;
+    object-fit: cover;
+}
+.rate_text_01 /*js*/
+{
+    margin: 0;
+    font-size: 2vw;
+    align-self: flex-end;
+}
+.rate_block_01
+{
+    display: flex;
+    flex: 1 0 auto;
+    /*justify-content: end;*/
+}
+.range_002
+{
+    width: 20%;
+}
 .range_001
 {
     width: 40%;
+}
+.rate_002
+{
+    margin: 0.5vw;
+    font-size: 3vmax;
+    width: 9vmax;
+    text-align: center;
 }
 .rate_001
 {
     margin: 0.5vw;
     font-size: 2vw;
+    width: 5vw;
+    text-align: center;
 }
 .theme_type_1
 {
@@ -61,7 +140,7 @@ textarea.area_type_1
 {
     display: grid;
     grid-template-columns: 20% 80%;
-    height: auto;
+    /*height: 1fr;*/
     align-items: center;
 }
 .rew_name_1
@@ -80,6 +159,7 @@ textarea.area_type_1
 }
 .rew_ico_1
 {
+    aspect-ratio: 1 / 1;
     width: 100%;
     border: solid black 0.25vmin;
     object-fit: cover;
@@ -97,6 +177,8 @@ textarea.area_type_1
 }
 .rew_subblock_1
 {
+    display:flex;
+    flex-direction:column;
     border: solid black 0.25vmin;
     border-radius: 1vmin;
     background: rgb(172, 172, 172);
@@ -427,7 +509,7 @@ li
     .rew_subblock_1
     {
         min-width: 60vw;
-        margin: 3vmin 6%;
+        margin: 3vmin;
         padding: 1vh;
     }
     .rew_name_1
@@ -483,6 +565,23 @@ li
     .rate_001
     {
         font-size: 4vw;
+        width: 10vw;
+    }
+    .sort_block_001
+    {
+        flex-direction: column;
+    }
+    .rate_text_01
+    {
+        font-size: 4vw;
+    }
+    .button_sort
+    {
+        font-size: 3vmax;
+    }
+    .button_filt
+    {
+        font-size: 3vmax;
     }
 }
 @media screen and (orientation: portrait) and (max-width: 480px)
@@ -542,6 +641,11 @@ li
         font-size: 3.5vw;
     }
     .rate_001
+    {
+        font-size: 5vw;
+        width: 12.5vw;
+    }
+    .rate_text_01
     {
         font-size: 5vw;
     }

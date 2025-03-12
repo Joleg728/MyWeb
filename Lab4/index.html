@@ -8,15 +8,9 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
 
         <link rel="icon" type="image/x-icon" href="assets/img/bebs.ico">
-
-        
-
-        <!-- <style type="text/css">
-
-        </style> -->
     </head>
 
-    <body id="body_id" onload="reviews_load()">
+    <body id="body_id" onload="reviews_load(rews_array)">
 
         <section class="logo_div">
 
@@ -84,7 +78,7 @@
 
                 <aside class="aside_type_1">
                     
-                    <section class="theme_type_1" onclick="theme_change()">Change theme</section>
+                    <section class="theme_type_1" onclick="theme_change();">Change theme</section>
 
                     <section class="aside_block_1">
                         <img src="assets/img/Engi.gif" alt="Engi" class="aside_img_1">
@@ -102,64 +96,45 @@
             <section class="rew_1">
             
                 <header class="rew_block_1">Отзывы наших клиентов</header>
+
+                <section class="filtr_block_001">
+
+                    <label class="filtr_001" for="range_id_002">Фильтр:</label>
+                    <input type="range" id="range_id_002" min="0" max="5" step="0.5" value="4" class="range_002" oninput="range_change_filt()">
+                    <p class="rate_002" id="range_val_002">4☆</p>
+                    <button type="submit" id="fltr_btn" onclick="fltrOnOff();" class="button_filt">Вкл</button>
+                </section>
+
+                <section class="sort_block_001">
+
+                    <p class="filtr_001">Сортировка:</p>
+                    <button type="submit" id="sort_strt_good" onclick="sort_good();" class="button_sort">Сначала хорошие</button>
+                    <button type="submit" id="sort_strt_bad" onclick="sort_bad();" class="button_sort">Сначала плохие</button>
+                    <button type="submit" id="sort_none" onclick="sort_none();" class="button_sort">Выкл</button>
+
+                </section>
             
                 <section class="rew_block_2" id="Reviews">
 
                     <section class="rew_subblock_1">
 
                         <section class="rew_subblock_2">
-                            <img src="assets/img/upload-file.svg" class="rew_ico_1" onclick="openFilePicker()" alt="Upload">
-                            <input type="text" class="rew_name_1" style="height: min-content;" id="rew_name_text"/>
+                        <section class="rew_img_001">
+                            <label for="img_inp"><img src="assets/img/upload-file.svg" class="rew_ico_1"></label>
+                            <input type="file" style="display: none;" alt="Upload" id="img_inp" onchange="readURL();" accept="image/*">
+                        </section>
+                            <input type="text" placeholder="Имя" class="rew_name_1" style="height: min-content;" id="rew_name_text"/>
                         </section>
 
                         <section class="rew_text_1">
-                            <textarea id="rew_main_text" class="area_type_1"></textarea>
+                            <textarea id="rew_main_text" placeholder="Текст" class="area_type_1"></textarea>
                         </section>
 
                         <section class="but_sect_1">
-                            <button class="but_type_1" onclick="create_rew()">Опуликовать</button>
-                            <p class="rate_001" id="range_val_001">4☆</p><input type="range" id="range_id_001" min="0" max="5" step="0.5" value="4" class="range_001" oninput="range_change()"> 
+                            <button type="submit" class="but_type_1" onclick="create_rew();">Опуликовать</button>
+                            <label for="range_id_001" class="rate_001" id="range_val_001">4☆</label><input type="range" id="range_id_001" min="0" max="5" step="0.5" value="4" class="range_001" oninput="range_change();"> 
                         </section>
 
-                    </section>
-<!--
-                    <section class="rew_subblock_1">
-
-                        <section class="rew_subblock_2">
-                            <img src="assets/img/soupcan.jpg" class="rew_ico_1" alt="SoupCan">
-                            <p class="rew_name_1">SoupCan Pyro</p>
-                        </section>
-
-                        <p class="rew_text_1">Я просто в восторге от Tiny Desk Engineer! 
-                            Несмотря на его маленький размер и кажущуюся бесполезность, 
-                            он приносит уникальную атмосферу.<br>
-                            Да, он дорогой, но его харизма и забавность стоят каждой монеты!
-                        </p>
-
-                    </section>
-
-                    <section class="rew_subblock_1">
-
-                        <section class="rew_subblock_2">
-
-                            <img src="assets/img/heavy.jpg" class="rew_ico_1" alt="SoupCan">
-                            <p class="rew_name_1">☟︎♏︎♋︎❖︎⍓︎❄︎☞︎📄︎</p>
-                            
-                        </section>
-
-                        <p class="rew_text_1">👌︎◆︎⧫︎ ⧫︎♒︎♏︎ ♓︎❍︎◻︎●︎♏︎❍︎♏︎■︎⧫︎♋︎⧫︎♓︎□︎■︎ □︎♐︎ ❍︎□︎♎︎♏︎❒︎■︎ ❍︎♏︎⧫︎♒︎□︎♎︎⬧︎ ◻︎●︎♋︎⍓︎⬧︎ 
-                            ♋︎ ♎︎♏︎♍︎♓︎⬧︎♓︎❖︎♏︎ ❒︎□︎●︎♏︎ ♓︎■︎ ♓︎■︎■︎□︎❖︎♋︎⧫︎♓︎❖︎♏︎ ❍︎♏︎⧫︎♒︎□︎♎︎⬧︎ □︎♐︎ ◻︎❒︎□︎♍︎♏︎
-                            ⬧︎⬧︎ ❍︎♋︎■︎♋︎♑︎♏︎❍︎♏︎■︎⧫︎📬︎</p>
-
-                    </section>
-                    
-                    <section class="rew_subblock_1">
-                        <section class="rew_subblock_2">
-                            <img src="assets/img/spy.jpg" class="rew_ico_1" alt="SoupCan">
-                            <p class="rew_name_1">ウィーブースパイ</p>
-                        </section>
-                        <p class="rew_text_1">同様に、一部の反対派の信念は、開発モデルを分析することを求めています。現代の世界では、
-                            組織の確立された構造が、進歩的な発展の方向性の準備と実施に貢献しています。</p> -->
                     </section>
 
                 </section>
