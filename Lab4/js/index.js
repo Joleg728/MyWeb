@@ -12,7 +12,7 @@ const rew03 = {name: "ウィーブースパイ",
     text: "同様に、一部の反対派の信念は、開発モデルを分析することを求めています。現代の世界では、 組織の確立された構造が、進歩的な発展の方向性の準備と実施に貢献しています。",
     rate: 4.5,
     imgSrc: "assets/img/spy.jpg"};
-let custom_rew01 = {name: "",
+let customRew01 = {name: "",
                     text: "",
                     rate: null,
                     imgSrc: "assets/img/ghostly_gibus.png"};
@@ -148,9 +148,9 @@ function oneRewLoad(element)
     ReviewsNode.appendChild(sect001);
 }
 
-function reviewsLoad( rew_mass )
+function reviewsLoad( rewMass )
 {
-    rew_mass.forEach(element => {
+    rewMass.forEach(element => {
         let sect001 = document.createElement("section");
         sect001.className = "rew_subblock_1";
         sect001.id = "REW";
@@ -208,19 +208,19 @@ function customReviewLoad()
     sect002.className = "rew_subblock_2";
 
     let domImg001 = document.createElement("img");
-    //domImg001.src = custom_rew01.imgSrc;
+    //domImg001.src = customRew01.imgSrc;
     domImg001.src = rewsArray[len].imgSrc;
     domImg001.className = "rew_ico_1";
     domImg001.alt = "Ico"
 
     let p001 = document.createElement("p");
     p001.className = "rew_name_1";
-    //p001.innerText = custom_rew01.name;
+    //p001.innerText = customRew01.name;
     p001.innerText = rewsArray[len].name;
 
     let p002 = document.createElement("p");
     p002.className = "rew_text_1";
-    //p002.innerText = custom_rew01.text;
+    //p002.innerText = customRew01.text;
     p002.innerText = rewsArray[len].text;
 
     let p003 = document.createElement("p");
@@ -245,7 +245,7 @@ function customReviewLoad()
 
 function createRew()
 {
-    if (custom_rew01.name != "")
+    if (customRew01.name != "")
     {
         return;
     }
@@ -262,10 +262,10 @@ function createRew()
     }
     else
     {
-        custom_rew01.name = nameText;
-        custom_rew01.text = rewText;
-        custom_rew01.rate = rate01;
-        rewsArray.push(custom_rew01);
+        customRew01.name = nameText;
+        customRew01.text = rewText;
+        customRew01.rate = rate01;
+        rewsArray.push(customRew01);
         if(!fltrOnOffState && lastButton == "none")
         {
             customReviewLoad();
@@ -288,13 +288,13 @@ function themeChange()
 
     const rewTitleNode = document.querySelector(".rew_block_1");
 
-    const headerType_1_Node = document.querySelector(".header_type_1");
+    const headerType1Node = document.querySelector(".header_type_1");
 
-    const articleType_1_Node = document.querySelector(".article_type_1");
+    const articleType1Node = document.querySelector(".article_type_1");
 
-    const mainType_1_Node = document.querySelector(".main_type_1");
+    const mainType1Node = document.querySelector(".main_type_1");
 
-    const mainType_2_Node = document.querySelector(".main_type_2");
+    const mainType2Node = document.querySelector(".main_type_2");
 
     const footerNode = document.querySelector("footer");
 
@@ -316,13 +316,13 @@ function themeChange()
         rewNode.style.backgroundColor = "#2d2d2d";
         rewTitleNode.style.color = "white";
 
-        headerType_1_Node.style.backgroundColor = "#8c4412";
+        headerType1Node.style.backgroundColor = "#8c4412";
 
-        articleType_1_Node.style.backgroundColor = "#8c4412";
+        articleType1Node.style.backgroundColor = "#8c4412";
 
-        mainType_1_Node.style.backgroundColor = "#825c00";
+        mainType1Node.style.backgroundColor = "#825c00";
 
-        mainType_2_Node.style.backgroundColor = "#825c00";
+        mainType2Node.style.backgroundColor = "#825c00";
 
         footerNode.style.backgroundColor = "#2d2d2d";
 
@@ -343,13 +343,13 @@ function themeChange()
         rewNode.style.backgroundColor = "#ffffff";
         rewTitleNode.style.color = "black";
 
-        headerType_1_Node.style.backgroundColor = "#ff7f27";
+        headerType1Node.style.backgroundColor = "#ff7f27";
 
-        articleType_1_Node.style.backgroundColor = "#ff7f27";
+        articleType1Node.style.backgroundColor = "#ff7f27";
 
-        mainType_1_Node.style.backgroundColor = "#FFB401";
+        mainType1Node.style.backgroundColor = "#FFB401";
 
-        mainType_2_Node.style.backgroundColor = "#FFB401";
+        mainType2Node.style.backgroundColor = "#FFB401";
 
         footerNode.style.backgroundColor = "#ffffff";
 
@@ -374,11 +374,11 @@ function sortGood()
 
     lastRewsNumb = 0;
 
-    let sort_rews_array = rewsArray.slice(0);
+    let sortRewsArray = rewsArray.slice(0);
     
-    sort_rews_array = sort_rews_array.sort((a, b) => - a.rate + b.rate)
+    sortRewsArray = sortRewsArray.sort((a, b) => - a.rate + b.rate)
 
-    sort_rews_array.forEach(element => {
+    sortRewsArray.forEach(element => {
         oneRewLoad(element);
         lastRewsNumb++;
     });
@@ -397,10 +397,10 @@ function sortBad()
 
         lastRewsNumb = 0;
     
-        let sort_rews_array = rewsArray.slice(0);
-        sort_rews_array = sort_rews_array.sort((a, b) => a.rate - b.rate)
+        let sortRewsArray = rewsArray.slice(0);
+        sortRewsArray = sortRewsArray.sort((a, b) => a.rate - b.rate)
     
-        sort_rews_array.forEach(element => {
+        sortRewsArray.forEach(element => {
             oneRewLoad(element);
             lastRewsNumb++;
         });
@@ -449,7 +449,7 @@ function readURL()
         
         const img = new Image();
 
-        custom_rew01.imgSrc = url;
+        customRew01.imgSrc = url;
 
     });
 }
