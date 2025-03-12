@@ -446,8 +446,8 @@ function readURL()
     flrd.addEventListener('load', () => {
 
         const url = flrd.result;
-        
-        const img = new Image();
+
+        document.getElementById("img_prev").src = url
 
         customRew01.imgSrc = url;
 
