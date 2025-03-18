@@ -271,6 +271,8 @@ function createRew()
             customReviewLoad();
             lastRewsNumb = rewsArray.length;
         }
+        
+        document.getElementById("Custom").reset();
     }
 }
 
@@ -438,6 +440,11 @@ function delAllRews( count )
 function readURL()
 {
     let file01 = document.getElementById('img_inp');
+
+    if(!file01.files[0].type.includes("image"))
+    {
+        return;
+    }
 
     const flrd = new FileReader();
 

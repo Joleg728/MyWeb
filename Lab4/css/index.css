@@ -99,8 +99,8 @@ button.but_type_1
     font-size: 1.5vw;
     font-family: TF2 Secondary;
     padding: 1vmin;
-    border: solid black 0.2vmin;
-    border-radius: 1vmin;
+    /*border: solid black 0.2vmin;
+    border-radius: 1vmin;*/
     outline: none;
 }
 section.but_sect_1
@@ -133,6 +133,7 @@ textarea.area_type_1
     grid-template-columns: 20% 80%;
     /*height: 1fr;*/
     align-items: center;
+    background-color: rgb(190, 190, 190);
 }
 .rew_name_1
 {

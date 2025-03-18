@@ -116,11 +116,11 @@
             
                 <section class="rew_block_2" id="Reviews">
 
-                    <section class="rew_subblock_1">
+                    <form onsubmit="return false;" class="rew_subblock_1" id="Custom">
 
                         <section class="rew_subblock_2">
                         <section class="rew_img_001">
-                            <label for="img_inp"><img src="assets/img/upload-file.svg" title="Загрузить изображение" alt="upload" class="rew_ico_1" id="img_prev"></label>
+                            <label for="img_inp"><img src="assets/img/upload-file.svg" draggable="false" title="Загрузить изображение" alt="upload" class="rew_ico_1" id="img_prev"></label>
                             <input type="file" style="display: none;" id="img_inp" onchange="readURL();" accept="image/*">
                         </section>
                             <input type="text" placeholder="Имя" class="rew_name_1" style="height: min-content;" id="rew_name_text"/>
@@ -135,7 +135,7 @@
                             <label for="range_id_001" class="rate_001" id="range_val_001">4☆</label><input type="range" id="range_id_001" min="0" max="5" step="0.5" value="4" class="range_001" oninput="rangeChange();"> 
                         </section>
 
-                    </section>
+                    </form>
 
                 </section>
 
