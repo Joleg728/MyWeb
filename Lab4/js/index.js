@@ -273,6 +273,7 @@ function createRew()
         }
         
         document.getElementById("Custom").reset();
+        document.getElementById("range_val_001").innerText = (document.getElementById("range_id_001").value + "☆");
     }
 }
 
