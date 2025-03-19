@@ -11,6 +11,7 @@ h2
 body
 {
     background-image: url("../assets/img/back001.svg");
+	animation: scroll linear 100s infinite;
 }
 #header01
 {
@@ -133,4 +134,14 @@ section
 {
     font-family: TF2 Secondary;
     src:url("../assets/font/TF.ttf");
+}
+
+
+@keyframes scroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
 }
