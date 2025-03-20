@@ -291,10 +291,29 @@ function editMenu()
 
         // editEnabled = false;
     }
+
+    let sectList = document.getElementsByClassName("header_01");
+
+    let listLen = sectList.length;
+
+    for (let i = 0; i < listLen; i++)
+    {
+        let origEl = sectList[0];
+        let text = origEl.innerText;
+        let origHeight = origEl.offsetHeight;
+
+        let newEl = document.createElement("input");
+        newEl.type = "text";
+        newEl.value = text;
+        newEl.className = "textarea_changed_header";
+        newEl.style.minHeight = origHeight + "px";            
+
+        sectList[0].parentNode.replaceChild(newEl, origEl);
+    }
     
     sectList = document.getElementsByClassName("inner_type_01");
 
-    let listLen = sectList.length;
+    listLen = sectList.length;
 
     for (let i = 0; i < listLen; i++)
     {
@@ -309,6 +328,7 @@ function editMenu()
 
         sectList[0].parentNode.replaceChild(newEl, origEl);
     }
+
     let asideBlock = document.createElement("aside");
     asideBlock.innerText = "Сохранить";
     asideBlock.setAttribute("onclick","exitEdit();");
@@ -323,9 +343,29 @@ function exitEdit()
         {
             return;
         }
-        sectList = document.getElementsByClassName("textarea_changed");
+
+        let sectList = document.getElementsByClassName("textarea_changed_header");
 
         let listLen = sectList.length;
+
+        for (let i = 0; i < listLen; i++)
+        {
+            let origEl = sectList[0];
+            let text = origEl.value;
+            //let origHeight = origEl.offsetHeight;
+
+            let newEl = document.createElement("h2");
+            //newEl.type = "text";
+            newEl.innerText = text;
+            newEl.className = "header_01";
+            //newEl.style.minHeight = origHeight + "px";            
+
+            sectList[0].parentNode.replaceChild(newEl, origEl);
+        }
+
+        sectList = document.getElementsByClassName("textarea_changed");
+
+        listLen = sectList.length;
     
         for (let i = 0; i < listLen; i++)
         {
@@ -338,6 +378,7 @@ function exitEdit()
     
             sectList[0].parentNode.replaceChild(newEl, origEl);
         }
+
         let asideBlock = document.querySelector("aside");
 
         asideBlock.parentNode.removeChild(asideBlock);
