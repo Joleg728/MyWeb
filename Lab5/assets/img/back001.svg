@@ -25,14 +25,14 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="8"
-     inkscape:cx="27.9375"
+     inkscape:cx="27.8125"
      inkscape:cy="17.375"
      inkscape:window-width="1920"
      inkscape:window-height="986"
      inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      showguides="true">
     <sodipodi:guide
        position="0,40"
@@ -140,7 +140,7 @@
      id="layer2"
      inkscape:label="Слой 2">
     <rect
-       style="fill:#ffffaf;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-miterlimit:100;stroke-dasharray:none"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-miterlimit:100;stroke-dasharray:none"
        id="rect1718"
        width="40"
        height="40"
@@ -153,22 +153,22 @@
      id="layer1">
     <path
        id="rect764"
-       style="stroke:#000000;stroke-width:0;stroke-miterlimit:100;fill:#ffff89;fill-opacity:1"
+       style="stroke:#000000;stroke-width:0;stroke-miterlimit:100;fill:#ffff62;fill-opacity:1"
        d="M 0,0 H 10 L 40,30 V 40 Z"
        sodipodi:nodetypes="ccccc" />
     <path
        id="rect764-2"
-       style="stroke:#000000;stroke-width:0;stroke-miterlimit:100;fill:#ffff89;fill-opacity:1"
+       style="stroke:#000000;stroke-width:0;stroke-miterlimit:100;fill:#ffff62;fill-opacity:1"
        d="M 20,0 H 30 L 40,10 V 20 Z"
        sodipodi:nodetypes="ccccc" />
     <path
        id="rect764-8"
-       style="stroke:#000000;stroke-width:0;stroke-miterlimit:100;fill:#ffff89;fill-opacity:1"
+       style="stroke:#000000;stroke-width:0;stroke-miterlimit:100;fill:#ffff62;fill-opacity:1"
        d="M 0,20.032275 V 10 L 30,40 H 19.967725 Z"
        sodipodi:nodetypes="ccccc" />
     <path
        id="rect764-22"
-       style="stroke:#000000;stroke-width:0;stroke-miterlimit:100;fill:#ffff89;fill-opacity:1"
+       style="stroke:#000000;stroke-width:0;stroke-miterlimit:100;fill:#ffff62;fill-opacity:1"
        d="M 0,40 V 30 l 10,10 z"
        sodipodi:nodetypes="cccc" />
   </g>

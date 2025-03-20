@@ -1,5 +1,64 @@
 @import "reset.css";
 
+aside
+{
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    height: 30px;
+    /* aspect-ratio: 2 / 1; */
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: #ffffff;
+    position: sticky;
+    right: 10px;
+    bottom: 10px;
+    float: right;
+
+}
+.textarea_changed
+{
+    width: inherit;
+    resize: none;
+    outline: none;
+    background-color: #cfcfcf;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 28px;
+    text-align: justify;
+}
+.header_button
+{
+    float: right;
+    height: 30px;
+    aspect-ratio: 1 / 1;
+    border: 2px solid black;
+    padding: 0;
+    margin: 5px 30px;
+}
+header
+{
+    display: flex;
+    align-items: center;
+    background-color: #e4c86b;
+    padding: 5px;
+    height: 100px;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+}
+h1
+{
+    padding: 10px;
+    margin: 10px;
+    font-size: 60px;
+    height: min-content;
+    text-align: center;
+}
 h2
 {
     padding: 10px;
@@ -11,18 +70,19 @@ h2
 body
 {
     background-image: url("../assets/img/back001.svg");
+    background-size: 20vmin;
 	animation: scroll linear 100s infinite;
 }
-#header01
+.header_01
 {
-    background-color: #a0a0a0;
+    background-color: #ffffff;
     border: 1px solid black;
     border-radius: 10px;
     /* grid-area: 1 / 1 / 2 / 2; */
 }
 .inner_type_03_right
 {
-    background-color: #a0a0a0;
+    background-color: #ffffff;
     border: 1px solid black;
     border-radius: 7px;
     padding: 5px;
@@ -33,7 +93,7 @@ body
 }
 .inner_type_03_left
 {
-    background-color: #a0a0a0;
+    background-color: #ffffff;
     border: 1px solid black;
     border-radius: 7px;
     padding: 5px;
@@ -44,7 +104,7 @@ body
 }
 .inner_type_02
 {
-    background-color: #a0a0a0;
+    background-color: #ffffff;
     border: 1px solid black;
     border-radius: 7px;
     /* height: 100px; */
@@ -56,7 +116,7 @@ body
 }
 .inner_type_01
 {
-    background-color: #a0a0a0;
+    background-color: #ffffff;
     border: 1px solid black;
     border-radius: 10px;
     /* height: 100px; */
@@ -95,7 +155,7 @@ body
     aspect-ratio: 3 / 4;
     object-fit: cover;
     margin: 10px 0;
-    border: 5px solid gray;
+    border: 5px ridge gray;
     border-radius: 10px;
     /* grid-area: 1 / 2 / 3 / 3; */
 }

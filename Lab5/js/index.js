@@ -53,7 +53,7 @@ class InfoBlock extends Block
 
         let pHead = document.createElement("h2");
         pHead.innerText = "Имя: " + this.headerText;
-        pHead.id = "header01";
+        pHead.className = "header_01";
 
         let pInner = document.createElement("p");
         pInner.innerText = "История: " + this.innerText;
@@ -111,7 +111,7 @@ class InfoBlock extends Block
         sectMain.appendChild(sub01);
         sectMain.appendChild(img);
 
-        document.querySelector("body").appendChild(sectMain);
+        document.querySelector("main").appendChild(sectMain);
 
         return;
     }
@@ -126,7 +126,7 @@ class BioBlock extends Block
 
         let pHead = document.createElement("h2");
         pHead.innerText = "Биография";
-        pHead.id = "header02";
+        // pHead.id = "header02";
 
         let pInner = document.createElement("p");
         pInner.innerText = this.innerText;
@@ -136,7 +136,7 @@ class BioBlock extends Block
         sectMain.appendChild(pHead);
         sectMain.appendChild(pInner);
 
-        document.querySelector("body").appendChild(sectMain);
+        document.querySelector("main").appendChild(sectMain);
 
         return;
     }
@@ -162,7 +162,7 @@ class StatBlock extends Block
 
         let pHead = document.createElement("h2");
         pHead.innerText = "Характеристики";
-        pHead.id = "header02";
+        // pHead.id = "header02";
 
         sectMain.appendChild(pHead);
 
@@ -213,13 +213,11 @@ class StatBlock extends Block
         subSect01.appendChild(subSect03);
         sectMain.appendChild(subSect01);
 
-        document.querySelector("body").appendChild(sectMain);
+        document.querySelector("main").appendChild(sectMain);
 
         return;
     }
 }
-
-
 
 let block01 = new InfoBlock;
 block01.headerText = "Джотаро Токийский";
@@ -249,7 +247,77 @@ let blocksList = [block01, block02, block03];
 
 function loadBodyMain()
 {
+    let mainHeader = document.createElement("header");
+
+    let headerText = document.createElement("h1");
+
+    let headerButton = document.createElement("img");
+    headerButton.src = "assets/img/edit.jpg";
+    headerButton.className = "header_button";
+    headerButton.alt = "edit";
+    headerButton.setAttribute("onclick","editMenu();");
+    // headerButton.onclick = editMenu();
+
+    headerText.innerText = "Лаб 5";
+    // headerText.append(headerButton);
+    
+    mainHeader.append(headerText);
+
+    document.querySelector("body").append(mainHeader);
+
+    document.querySelector("header").appendChild(headerText);
+    document.querySelector("header").appendChild(headerButton);
+
+    // document.querySelector("body").append(document.createElement("aside"))
+
+    document.querySelector("body").append(document.createElement("main"));
+
     blocksList.forEach(element => {
         element.returnHtml();
     });
+
+    document.querySelector("body").append(document.createElement("footer"));
+}
+
+let editEnabled = false;
+
+function editMenu()
+{
+    if(editEnabled)
+    {
+        return;
+
+        // document.querySelector("aside").parentNode.removeChild(document.querySelector("aside"));
+
+        // editEnabled = false;
+    }
+    
+    sectList = document.getElementsByClassName("inner_type_01");
+
+    let listLen = sectList.length;
+
+    for (let i = 0; i < listLen; i++)
+    {
+        let origEl = sectList[0];
+        let text = origEl.innerText;
+        let origHeight = origEl.offsetHeight;
+
+        let newEl = document.createElement("textarea");
+        newEl.innerText = text;
+        newEl.className = "textarea_changed";
+        newEl.style.minHeight = origHeight + "px";            
+
+        sectList[0].parentNode.replaceChild(newEl, origEl);
+    }
+    let asideBlock = document.createElement("aside");
+    asideBlock.innerText = "Сохранить";
+    asideBlock.setAttribute("onclick","exitEdit();");
+    document.querySelector("body").append(asideBlock);
+
+    editEnabled = true;
+    
+}
+function exitEdit()
+{
+
 }
