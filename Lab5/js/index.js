@@ -319,5 +319,28 @@ function editMenu()
 }
 function exitEdit()
 {
+    if(!editEnabled)
+        {
+            return;
+        }
+        sectList = document.getElementsByClassName("textarea_changed");
 
+        let listLen = sectList.length;
+    
+        for (let i = 0; i < listLen; i++)
+        {
+            let origEl = sectList[0];
+            let text = origEl.value;
+    
+            let newEl = document.createElement("p");
+            newEl.innerText = text;
+            newEl.className = "inner_type_01";          
+    
+            sectList[0].parentNode.replaceChild(newEl, origEl);
+        }
+        let asideBlock = document.querySelector("aside");
+
+        asideBlock.parentNode.removeChild(asideBlock);
+    
+        editEnabled = false;
 }
