@@ -305,7 +305,26 @@ function editMenu()
         let newEl = document.createElement("input");
         newEl.type = "text";
         newEl.value = text;
-        newEl.className = "textarea_changed_header";
+        newEl.className = "input_changed_header";
+        newEl.style.minHeight = origHeight + "px";            
+
+        sectList[0].parentNode.replaceChild(newEl, origEl);
+    }
+
+    sectList = document.getElementsByClassName("inner_type_02");
+
+    listLen = sectList.length;
+
+    for (let i = 0; i < listLen; i++)
+    {
+        let origEl = sectList[0];
+        let text = origEl.innerText;
+        let origHeight = origEl.offsetHeight;
+
+        let newEl = document.createElement("input");
+        newEl.type = "text";
+        newEl.value = text;
+        newEl.className = "input_changed_mini";
         newEl.style.minHeight = origHeight + "px";            
 
         sectList[0].parentNode.replaceChild(newEl, origEl);
@@ -320,11 +339,13 @@ function editMenu()
         let origEl = sectList[0];
         let text = origEl.innerText;
         let origHeight = origEl.offsetHeight;
+        // let origWidth = origEl.offsetWidth;
 
         let newEl = document.createElement("textarea");
         newEl.innerText = text;
         newEl.className = "textarea_changed";
-        newEl.style.minHeight = origHeight + "px";            
+        newEl.style.minHeight = origHeight + "px"; 
+        // newEl.style.width = origWidth + "px"; 
 
         sectList[0].parentNode.replaceChild(newEl, origEl);
     }
@@ -344,7 +365,7 @@ function exitEdit()
             return;
         }
 
-        let sectList = document.getElementsByClassName("textarea_changed_header");
+        let sectList = document.getElementsByClassName("input_changed_header");
 
         let listLen = sectList.length;
 
@@ -358,6 +379,25 @@ function exitEdit()
             //newEl.type = "text";
             newEl.innerText = text;
             newEl.className = "header_01";
+            //newEl.style.minHeight = origHeight + "px";            
+
+            sectList[0].parentNode.replaceChild(newEl, origEl);
+        }
+
+        sectList = document.getElementsByClassName("input_changed_mini");
+
+        listLen = sectList.length;
+
+        for (let i = 0; i < listLen; i++)
+        {
+            let origEl = sectList[0];
+            let text = origEl.value;
+            //let origHeight = origEl.offsetHeight;
+
+            let newEl = document.createElement("p");
+            //newEl.type = "text";
+            newEl.innerText = text;
+            newEl.className = "inner_type_02";
             //newEl.style.minHeight = origHeight + "px";            
 
             sectList[0].parentNode.replaceChild(newEl, origEl);

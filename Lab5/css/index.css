@@ -2,7 +2,7 @@
 
 aside
 {
-    font-size: 14px;
+    font-size: 18px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -19,7 +19,22 @@ aside
     float: right;
 
 }
-.textarea_changed_header
+.input_changed_mini
+{
+    /* min-height: 10px; */
+    /* width: min-content; */
+    /* height: 20px; */
+    resize: none;
+    outline: none;
+    background-color: #cfcfcf;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 2px;
+    font-size: 20px;
+    text-align: center;
+}
+.input_changed_header
 {
     min-height: 20px;
     width: inherit;
@@ -187,6 +202,7 @@ body
     background-color: inherit;
     margin: 0;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
 }
