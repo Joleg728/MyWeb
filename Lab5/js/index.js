@@ -275,7 +275,7 @@ function loadBodyMain()
     headerButton.alt = "edit";
     headerButton.setAttribute("onclick","editMenu();");
 
-    headerText.innerText = "Лаб 6";
+    headerText.innerText = "Лаб 5";
     
     mainHeader.append(headerText);
 
