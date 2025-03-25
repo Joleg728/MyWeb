@@ -539,3 +539,20 @@ function exitEdit()
     
         editEnabled = false;
 }
+
+async function A()
+{
+    let resp = await fetch("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m")
+
+    // alert(resp.headers.get("Content-Type"));
+
+    if(resp.ok)
+    {
+        let weather = await resp.json();
+        alert(weather.latitude);
+    }
+    else
+    {
+        alert("AAAAAA" + resp.status);
+    }
+}
