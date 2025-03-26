@@ -1,5 +1,29 @@
 @import "reset.css";
 
+.nav_but_1
+{
+    font-size: 24px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 14px;
+    padding: 8px;
+    margin: 5px;
+    width: 100px;
+    background-color: white;
+    user-select: none;
+}
+.nav_1
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 5px 0 0 0;
+    padding: 20px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    /* border-radius: 24px; */
+    background-color: #e4c86b;
+}
 aside
 {
     font-size: 18px;

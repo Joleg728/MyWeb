@@ -284,6 +284,38 @@ function loadBodyMain()
     document.querySelector("header").appendChild(headerText);
     document.querySelector("header").appendChild(headerButton);
 
+    let navEl = document.createElement("nav");
+
+    navEl.className = "nav_1";
+
+    let navButMain = document.createElement("section");
+    let navButApi1 = document.createElement("section");
+    let navButApi2 = document.createElement("section");
+    let navButApi3 = document.createElement("section");
+
+    navButMain.className = "nav_but_1";
+    navButMain.addEventListener("click", function(e) {window.location.href="index.html";}, false);
+    navButMain.innerText = "Main";
+
+    navButApi1.className = "nav_but_1";
+    navButApi1.addEventListener("click", function(e) {window.location.href="indexApi1.html";}, false);
+    navButApi1.innerText = "Api 1";
+
+    navButApi2.className = "nav_but_1";
+    navButApi2.addEventListener("click", function(e) {window.location.href="indexApi2.html";}, false);
+    navButApi2.innerText = "Api 2";
+
+    navButApi3.className = "nav_but_1";
+    navButApi3.addEventListener("click", function(e) {window.location.href="indexApi3.html";}, false);
+    navButApi3.innerText = "Api 3";
+
+    navEl.appendChild(navButMain);
+    navEl.appendChild(navButApi1);
+    navEl.appendChild(navButApi2);
+    navEl.appendChild(navButApi3);
+
+    document.querySelector("body").append(navEl);
+
     document.querySelector("body").append(document.createElement("main"));
 
     blocksList.forEach(element => {
@@ -376,7 +408,6 @@ function editMenu()
         let text = origEl.innerText;
         
         text = text.split(" ")[text.split(" ").length - 1];
-        // alert(text);
         let origHeight = origEl.offsetHeight;
 
         let newEl = document.createElement("input");
@@ -538,21 +569,4 @@ function exitEdit()
         asideBlock.parentNode.removeChild(asideBlock);
     
         editEnabled = false;
-}
-
-async function A()
-{
-    let resp = await fetch("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m")
-
-    // alert(resp.headers.get("Content-Type"));
-
-    if(resp.ok)
-    {
-        let weather = await resp.json();
-        alert(weather.latitude);
-    }
-    else
-    {
-        alert("AAAAAA" + resp.status);
-    }
 }
