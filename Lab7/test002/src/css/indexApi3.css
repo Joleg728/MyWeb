@@ -70,9 +70,6 @@
     width: min-content;
     display: grid;
     grid-template-columns: auto auto;
-    /* flex-direction: column;
-    justify-content: center; */
-    /* align-items: center; */
     border: solid 5px rgb(81, 81, 81);
     border-radius: 50px;
     color: white;
@@ -85,7 +82,6 @@
     background-color: rgb(96, 96, 96);
     padding: 5px;
     height: 100px;
-    /* justify-content: space-between; */
     border-bottom: 2px solid #000000;
 }
 h3
@@ -106,30 +102,17 @@ h2
 }
 .body_class_api3
 {
-    /* background-image: url("../assets/img/back003.svg"); */
     background-image: url("../assets/img/By-u Dylanluper.png");
     background-color: #212121ff;
     background-size: 25vmin;
 	animation: scroll linear 100s infinite;
     background-color: transparent;
     padding: 0 0 30px;
-    /* padding: 20px 0 50px; */
     height: 100%;
     min-height: max-content;
     box-sizing: border-box;
+    min-width: max-content;
 }
-/* .nav_but_1
-{
-    font-size: 24px;
-    text-align: center;
-    border: 2px solid black;
-    border-radius: 14px;
-    padding: 8px;
-    margin: 5px;
-    width: 100px;
-    background-color: #ffffff;
-    user-select: none;
-} */
 .nav_1_api3
 {
     display: flex;
@@ -139,7 +122,6 @@ h2
     padding: 20px;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
-    /* border-radius: 24px; */
     background-color: rgb(58, 58, 58);
 }
 

@@ -51,10 +51,6 @@
       
     </main>
 
-    
-
-    <!-- <AAA></AAA> -->
-
     <main v-if="isEdit">
       <section id="head_sect" class="sect_head" :style="{width: masterWight}">
 
@@ -120,11 +116,6 @@
 
   </section>
 
-  <!-- <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div> -->
-
 </template>
 
 <script>
@@ -135,23 +126,15 @@ function isZero(obj)
 
   for (const vals of Object.entries(obj))
   {
-    // console.log(`${key}: ${value}`);
-
     if (vals[1].length === 0)
     {
-      // console.log(vals[1].length);
       ans = true;
       break;
     }
-
-    // ans += (vals[1] === 0);
   }
-  // console.log(ans);
   
   return ans;
 }
-
-// import AAA from "./AAA.vue";
 
   export default{
 
@@ -190,11 +173,6 @@ function isZero(obj)
       };
     },
 
-    // components:
-    // {
-    //   AAA
-    // },
-
     methods:
     {
       editMenu: function()
@@ -210,12 +188,6 @@ function isZero(obj)
           return;
         }
 
-        // if (this.info.some(el => el.length === 0) || 
-        //     this.chars.some(el => el.length === 0) || 
-        //     this.bio === 0)
-        // {
-        //   return;
-        // }
         this.isEdit = false;
       }
     },
