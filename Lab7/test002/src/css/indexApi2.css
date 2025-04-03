@@ -37,7 +37,7 @@
 .cat_img
 {
     width: 800px;
-    min-height: 100px;
+    /* min-height: 100px; */
     border-radius: 10px;
 }
 .body_header_api2

@@ -3,7 +3,7 @@
   <section class="cat_zone" id="cat_box" @load="fetchCatImage">
     <h3>Случайное изображение котиков (≽ↀωↀ≼)</h3>
     <section v-if="loading" class="loading" id="load">Загрузка...</section>
-    <img v-if="!loading & catImgUrl" :src="catImgUrl" alt="cat_img" class="cat_img" @load="onImageLoad" @error="onImageError" />
+    <img ref="cat" :style="`height: ${imgHeight};`" :src="catImgUrl" alt="cat_img" class="cat_img" @load="onImageLoad" @error="onImageError" />
     <section class="loading" v-if="errorMessage">{{ errorMessage }}</section>
     <button @click="fetchCatImage" class="cat_button">Получить котика</button>
   </section>
@@ -31,6 +31,7 @@
         loading: false,
         errorMessage: null,
         timeoutId: null,
+        imgHeight: "0px",
       };
     },
     methods: {
@@ -47,7 +48,7 @@
 
           const cat = await resp.json();
           this.catImgUrl = cat[0].url;
-          alert(this.catImgUrl);
+          console.log(`ссылка на котика: ${this.catImgUrl}`);
 
           this.timeoutId = setTimeout(() => {
           this.loading = false;
@@ -56,6 +57,7 @@
         catch (error)
         {
           alert("Произошла ошибка при получении котика");
+          this.loading = false;
           console.error(error.message || "Произошла ошибка при получении котика");
           this.errorMessage = "Произошла ошибка при получении котика";
           clearTimeout(this.timeoutId);
@@ -69,9 +71,11 @@
       onImageLoad() {
         this.loading = false;
         clearTimeout(this.timeoutId);
+        this.imgHeight = "";
       },
       onImageError() {
         this.errorMessage = "Произошла ошибка при загрузке котика";
+        this.loading = false;
         this.catImgUrl = null;
         clearTimeout(this.timeoutId);
       },
