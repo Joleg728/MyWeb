@@ -36,6 +36,7 @@
     },
     methods: {
       async fetchCatImage() {
+		this.imgHeight = "0px";
         this.loading = true;
         this.errorMessage = null;
         try
