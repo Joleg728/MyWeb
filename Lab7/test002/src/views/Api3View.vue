@@ -9,7 +9,7 @@
         <section class="sect_sub_1">
 
             <button class="button_main_1" @click="getTest()">GET</button>
-        
+			
             <button class="button_main_1" @click="postTest();">POST</button>
 
             <button class="button_main_1" @click="putTest();">PUT</button>
